@@ -1,0 +1,205 @@
+{
+  "activity": "com.saudia.SaudiaApp",
+  "elements": [
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.widget.LinearLayout",
+      "text": "",
+      "resource_id": "com.saudia.SaudiaApp:id/action_bar_root",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.widget.FrameLayout",
+      "text": "",
+      "resource_id": "android:id/content",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "androidx.compose.ui.platform.ComposeView",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 2340"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 100 1080 2205"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 100 1080 2205"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 100 1080 2205"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 100 1080 258"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "11 112 146 247"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": true,
+      "bounds": "12 113 147 248"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "Previous screen",
+      "clickable": false,
+      "bounds": "45 146 113 214"
+    },
+    {
+      "class": "android.widget.Button",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "45 146 113 214"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 258 1080 2205"
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Verify mobile number",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "56 348 1024 444"
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Verify your mobile number to log in. You can edit it if needed.",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "56 467 1024 603"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": true,
+      "bounds": "56 772 1024 941"
+    },
+    {
+      "class": "android.widget.EditText",
+      "text": "+2449464656679",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": true,
+      "bounds": "56 772 1024 941"
+    },
+    {
+      "class": "android.widget.ImageView",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "null",
+      "clickable": true,
+      "bounds": "886 789 1021 924"
+    },
+    {
+      "class": "android.widget.TextView",
+      "text": "Mobile number",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "101 795 333 840"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "56 1890 1024 2025"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "android:id/statusBarBackground",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 0 1080 100"
+    },
+    {
+      "class": "android.view.View",
+      "text": "",
+      "resource_id": "android:id/navigationBarBackground",
+      "content_desc": "",
+      "clickable": false,
+      "bounds": "0 2205 1080 2340"
+    }
+  ]
+}

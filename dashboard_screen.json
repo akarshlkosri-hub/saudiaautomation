@@ -1,0 +1,218 @@
+[
+  {
+    "text": "",
+    "resource_id": "com.saudia.SaudiaApp:id/action_bar_root",
+    "content_desc": "",
+    "class": "android.widget.LinearLayout",
+    "clickable": false,
+    "bounds": "0 0 1080 2340"
+  },
+  {
+    "text": "",
+    "resource_id": "android:id/content",
+    "content_desc": "",
+    "class": "android.widget.FrameLayout",
+    "clickable": false,
+    "bounds": "0 0 1080 2340"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Home",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "0 0 1080 2340"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": " The Lotus temple in Delhi, India",
+    "class": "android.widget.ImageView",
+    "clickable": false,
+    "bounds": "0 0 1080 1199"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "12 181 147 316"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Hamburger menu",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "45 214 113 282"
+  },
+  {
+    "text": "GREEN Member",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "79 406 336 451"
+  },
+  {
+    "text": "Hi, zayna feras shakhtour",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "56 550 1024 781"
+  },
+  {
+    "text": "You have 0 Reward Miles ",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "56 821 596 889"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Enter travel destinations button",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "56 957 1024 1200"
+  },
+  {
+    "text": "Your trips",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "56 1313 1080 1372"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "56 1406 1024 1974"
+  },
+  {
+    "text": "IY512",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "854 1462 968 1515"
+  },
+  {
+    "text": "ADE",
+    "resource_id": "",
+    "content_desc": "ADE",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "112 1462 249 1541"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "to",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "272 1479 317 1524"
+  },
+  {
+    "text": "JED",
+    "resource_id": "",
+    "content_desc": "JED",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "340 1462 468 1541"
+  },
+  {
+    "text": " to Jeddah",
+    "resource_id": "",
+    "content_desc": " to Jeddah",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "112 1569 307 1617"
+  },
+  {
+    "text": "Sunday, 16 Aug",
+    "resource_id": "",
+    "content_desc": "Sunday, 16 Aug",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "112 1645 390 1693"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "112 1783 968 1918"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Managebutton",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "112 1783 968 1918"
+  },
+  {
+    "text": "Manage",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.HorizontalScrollView",
+    "clickable": false,
+    "bounds": "440 1821 641 1880"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "1069 1406 1080 1974"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Selected Home Tab 1 of 4",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "54 2030 216 2182"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Trips Tab 2 of 4",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "333 2024 478 2182"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Assistant Tab 3 of 4",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "567 2024 784 2182"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "AlFursan Tab 4 of 4",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "841 2024 1049 2182"
+  },
+  {
+    "text": "",
+    "resource_id": "android:id/navigationBarBackground",
+    "content_desc": "",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "0 2205 1080 2340"
+  }
+]

@@ -1,0 +1,8 @@
+Logging initialized. Output saved to: C:\Users\ashus\SaudiaAutomation\logs\run_20260702_220834.log
+============================================================
+         SAUDIA AIRLINES LOGIN AUTOMATION
+============================================================
+Performing device connectivity health check...
+Health check warning: HTTPConnectionPool(host='192.168.1.3', port=5000): Max retries exceeded with url: /health (Caused by ConnectTimeoutError(<HTTPConnection(host='192.168.1.3', port=5000) at 0x2ae35534d70>, 'Connection to 192.168.1.3 timed out. (connect timeout=5)'))
+CRITICAL ERROR: Accessibility Server not reachable on phone!
+Please check your WiFi, IP address, and toggle Accessibility Service ON.

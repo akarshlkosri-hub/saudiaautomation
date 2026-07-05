@@ -1,0 +1,55 @@
+Logging initialized. Output saved to: C:\Users\ashus\SaudiaAutomation\logs\run_20260702_170823.log
+============================================================
+         SAUDIA AIRLINES LOGIN AUTOMATION
+============================================================
+Performing device connectivity health check...
+Device connectivity: OK
+Checking Brave browser debugging port...
+Brave remote debugging is already running and reachable.
+Brave browser status: OK
+Reading passenger list from Excel...
+Successfully loaded 113 pending passenger records.
+
+==================================================
+Processing Record 1/113 [Row 13]
+FFN: 1006210634 | Gmail: mitrasanjay3099@gmail.com
+==================================================
+
+[ACTION REQUIRED] Please switch Gmail account in Brave.
+--> Target Gmail: mitrasanjay3099@gmail.com
+Make sure Gmail is open and active in Brave browser.
+Press ENTER key when Gmail is ready...Initiating login sequence on phone...
+Force stopping Saudia app...
+Launching Saudia app fresh...
+App launch command sent.
+ERROR processing Row 13: Could not find 'AlFursan' tab on Home screen!
+Screenshot saved to: C:\Users\ashus\SaudiaAutomation\screenshots\row_13_final.png
+
+==================================================
+Processing Record 2/113 [Row 14]
+FFN: 1006210639 | Gmail: mitrasanjay3099@gmail.com
+==================================================
+Initiating login sequence on phone...
+Force stopping Saudia app...
+Launching Saudia app fresh...
+App launch command sent.
+Clicking AlFursan Tab: AlFursan Tab 4 of 4
+Click fallback: ADB Tapping at center (945, 2103)
+Clicking Login button at top right...
+Typing FFN: 1006210639
+Type fallback: Tapping element to focus and typing via ADB...
+Typing Password...
+Type fallback: Tapping element to focus and typing via ADB...
+ERROR processing Row 14: Could not locate Login Submit Button on form!
+Screenshot saved to: C:\Users\ashus\SaudiaAutomation\screenshots\row_14_final.png
+
+==================================================
+Processing Record 3/113 [Row 15]
+FFN: 1006210654 | Gmail: mitrasanjay3099@gmail.com
+==================================================
+Initiating login sequence on phone...
+Force stopping Saudia app...
+Launching Saudia app fresh...
+App launch command sent.
+Clicking AlFursan Tab: AlFursan Tab 4 of 4
+Click fallback: ADB Tapping at center (945, 2103)

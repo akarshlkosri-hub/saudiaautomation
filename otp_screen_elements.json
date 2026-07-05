@@ -1,0 +1,34 @@
+[
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Previous screen",
+    "class": "android.view.View",
+    "clickable": false,
+    "bounds": "45 146 113 214"
+  },
+  {
+    "text": "Verification required",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "56 348 1024 444"
+  },
+  {
+    "text": "A verification code has been sent to your registered email, mi.t**************@gmai*****",
+    "resource_id": "",
+    "content_desc": "",
+    "class": "android.widget.TextView",
+    "clickable": false,
+    "bounds": "56 467 1024 603"
+  },
+  {
+    "text": "",
+    "resource_id": "",
+    "content_desc": "Please enter the verification code sent to you phone number here",
+    "class": "android.view.View",
+    "clickable": true,
+    "bounds": "56 716 1024 919"
+  }
+]
