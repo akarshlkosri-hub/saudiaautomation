@@ -146,44 +146,72 @@ def run_automation():
             print("Waiting 5 seconds for OTP processing...")
             time.sleep(5.0)
             
-            # Check if we moved past OTP screen (Verify mobile number or dashboard)
-            elements, _ = phone_control.get_screen_elements()
-            screen_texts = " ".join([el.get('text', '') for el in elements]).lower()
-            
-            if "verify mobile number" in screen_texts:
-                # OTP was accepted! Now bypass this screen by restarting the app (Gotcha #6)
-                print("'Verify mobile number' screen detected. OTP accepted!")
-                print("Bypassing verification screen via app restart...")
-                phone_control.restart_app()
-                time.sleep(3.0) # Additional buffer for the dashboard to settle
+            # Sub-function to verify if screen indicates success
+            def evaluate_screen_state(current_otp):
+                nonlocal success_count, login_success
+                elements, _ = phone_control.get_screen_elements()
+                texts = " ".join([el.get('text', '') for el in elements]).lower()
                 
-                # Now verify we're on the dashboard
-                logged_in, msg = verify_login_success()
-                if logged_in:
-                    print(f"SUCCESS: FFN {ffn} logged in successfully! ({msg})")
-                    excel_reader.update_status(row_num, "Success", f"Logged in with OTP: {otp_code}")
-                    success_count += 1
-                    login_success = True
-                    print("\n[PAUSE AS REQUESTED] Reached logged-in condition. Stopping script here.")
-                    sys.exit(0)
+                if "verify mobile number" in texts:
+                    print("'Verify mobile number' screen detected. OTP accepted!")
+                    print("Bypassing verification screen via app restart...")
+                    phone_control.restart_app()
+                    time.sleep(3.0)
+                    logged_in, msg = verify_login_success()
+                    if logged_in:
+                        print(f"SUCCESS: FFN {ffn} logged in successfully! ({msg})")
+                        excel_reader.update_status(row_num, "Success", f"Logged in with OTP: {current_otp}")
+                        success_count += 1
+                        login_success = True
+                        print("\n[PAUSE AS REQUESTED] Reached logged-in condition. Stopping script here.")
+                        sys.exit(0)
+                    else:
+                        print(f"OTP entered and bypass attempted, but dashboard not found. {msg}")
+                    return True, texts
+                
+                elif "verification" in texts or "otp" in texts:
+                    return False, texts
                 else:
-                    print(f"OTP entered and bypass attempted, but dashboard not found. {msg}")
+                    logged_in, msg = verify_login_success()
+                    if logged_in:
+                        print(f"SUCCESS: FFN {ffn} logged in successfully! ({msg})")
+                        excel_reader.update_status(row_num, "Success", f"Logged in with OTP: {current_otp}")
+                        success_count += 1
+                        login_success = True
+                        print("\n[PAUSE AS REQUESTED] Reached logged-in condition. Stopping script here.")
+                        sys.exit(0)
+                    else:
+                        print(f"OTP entered but unknown screen state reached. {msg}")
+                    return True, texts
+                    
+            success_eval, screen_texts = evaluate_screen_state(otp_code)
             
-            elif "verification" in screen_texts or "otp" in screen_texts:
-                # Still on OTP screen - OTP was wrong or expired
+            if not success_eval:
+                # RETRY LOGIC (Resend OTP if 65 seconds passed)
                 print(f"OTP {otp_code} failed: Still on OTP/verification screen.")
-            else:
-                # Unknown screen - try verify anyway
-                logged_in, msg = verify_login_success()
-                if logged_in:
-                    print(f"SUCCESS: FFN {ffn} logged in successfully! ({msg})")
-                    excel_reader.update_status(row_num, "Success", f"Logged in with OTP: {otp_code}")
-                    success_count += 1
-                    login_success = True
-                    print("\n[PAUSE AS REQUESTED] Reached logged-in condition. Stopping script here.")
-                    sys.exit(0)
-                else:
-                    print(f"OTP entered but unknown screen state reached. {msg}")
+                elapsed = (datetime.now() - otp_request_time).total_seconds()
+                wait_time = max(0, 65 - elapsed)
+                if wait_time > 0:
+                    print(f"Waiting {wait_time:.1f} seconds for the 'Resend code' timer to expire...")
+                    time.sleep(wait_time)
+                
+                print("Initiating OTP Resend...")
+                otp_request_time_2 = phone_control.resend_otp()
+                
+                print("Polling Gmail for RESENT verification code...")
+                otp_code_2 = gmail_otp.wait_for_otp(otp_request_time_2, timeout=120, interval=5)
+                if not otp_code_2:
+                    raise Exception("OTP Fetch Timeout: No new RESENT OTP email found within 120 seconds.")
+                    
+                print(f"Entering RESENT OTP code {otp_code_2} into the Saudia app...")
+                phone_control.enter_otp(otp_code_2)
+                
+                print("Waiting 5 seconds for RESENT OTP processing...")
+                time.sleep(5.0)
+                
+                success_eval_2, screen_texts = evaluate_screen_state(otp_code_2)
+                if not success_eval_2:
+                    print(f"RESENT OTP {otp_code_2} failed as well.")
         
             if not login_success:
                 raise Exception(f"Login failed after OTP entry. Last known state: {screen_texts[:50]}")

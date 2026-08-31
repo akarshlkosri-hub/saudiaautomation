@@ -140,18 +140,19 @@ def enter_otp(otp_code, otp_field=None):
     
     # Locate OTP field to focus it
     if not otp_field:
-        elements, _ = get_screen_elements()
-        print(f"DEBUG: Found {len(elements)} elements on OTP screen:")
-        for el in elements:
-            text = el.get('text', '')
-            desc = el.get('content_desc', '')
-            print(f"  - Text: '{text}' | Desc: '{desc}' | Bounds: {el.get('bounds')}")
-            desc_lower = desc.lower()
-            if "verification code" in desc_lower or "verification" in desc_lower or "otp" in desc_lower:
-                otp_field = el
-                print(f"DEBUG: Matched OTP field: {el}")
+        print("Waiting for OTP field to appear...")
+        for _ in range(8):
+            elements, _ = get_screen_elements()
+            for el in elements:
+                desc = (el.get('content_desc', '') or '').lower()
+                if "verification code" in desc or "verification" in desc or "otp" in desc:
+                    otp_field = el
+                    print(f"DEBUG: Matched OTP field: {el}")
+                    break
+            if otp_field:
                 break
-                
+            time.sleep(1.0)
+            
     if otp_field and otp_field.get('bounds'):
         parts = otp_field['bounds'].strip().split()
         left, top, right, bottom = map(int, parts)
@@ -163,6 +164,16 @@ def enter_otp(otp_code, otp_field=None):
             
     print("Using ADB typing to trigger auto-submit listeners...")
     return adb_type_text(otp_code)
+
+def resend_otp():
+    """
+    Taps the 'Resend code' button area on the OTP screen.
+    Based on otpscreen.xml dump, it's a view at [405,919][675,1054].
+    """
+    print("Tapping 'Resend code' area...")
+    # Center of [405,919][675,1054] is x=540, y=986
+    adb_tap(540, 986)
+    return datetime.now()
 
 def press_back():
     """Send back command. Try HTTP first, fall back to ADB keyevent 4"""
